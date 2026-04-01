@@ -1,0 +1,586 @@
+/* Generator Layout */
+.generator {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav Bar */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+
+.nav__back {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: none;
+  padding: 0.5rem 0;
+  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav__back:hover {
+  color: var(--text-primary);
+}
+
+.nav__brand {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.nav__status {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot--on {
+  background: var(--success);
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.5);
+}
+
+.status-dot--off {
+  background: var(--text-muted);
+}
+
+/* Section Labels */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin-bottom: 0.875rem;
+  padding: 0.3rem 0.8rem;
+  background: var(--gradient-subtle);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+/* Input Area */
+.input-section {
+  margin-bottom: 2rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  background: var(--bg-input);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all var(--transition);
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.input-field:focus {
+  border-color: var(--accent-indigo);
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.1),
+    0 0 20px rgba(99, 102, 241, 0.05);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.input-field:disabled {
+  opacity: 0.4;
+}
+
+.input-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+/* Poem Length Slider */
+.length-section {
+  margin-bottom: 2rem;
+}
+
+.length-control {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.length-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.length-slider:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.length-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gradient);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.length-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+}
+
+.length-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gradient);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.length-info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  min-width: 72px;
+  justify-content: flex-end;
+}
+
+.length-value {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.length-unit {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.length-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-right: 85px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Model Selector */
+.model-section {
+  margin-bottom: 2rem;
+}
+
+.model-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.875rem;
+}
+
+.model-option {
+  position: relative;
+  padding: 1.25rem 1.4rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: all var(--transition);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Gradient border overlay */
+.model-option::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  padding: 1px;
+  background: var(--gradient-border);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.model-option:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.model-option:hover::before {
+  opacity: 0.6;
+}
+
+.model-option--active {
+  background: var(--gradient-subtle);
+  border-color: transparent;
+}
+
+.model-option--active::before {
+  opacity: 1;
+}
+
+.model-option__name {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.model-option__desc {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+}
+
+/* Generate Button */
+.generate-btn {
+  width: 100%;
+  padding: 1.1rem;
+  background: var(--gradient);
+  background-size: 200% 200%;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 30px rgba(99, 102, 241, 0.2),
+    0 0 60px rgba(168, 85, 247, 0.1);
+  animation: gradientShift 3s ease infinite;
+}
+
+.generate-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.generate-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+/* Poem Output */
+.poem-output {
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.5s ease;
+}
+
+.poem-card {
+  position: relative;
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+/* Top gradient accent line */
+.poem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient);
+}
+
+.poem-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.poem-card__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.poem-card__badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.35rem 0.9rem;
+  background: var(--gradient-subtle);
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+}
+
+.poem-card__keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 1rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.keyword-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0.7rem;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.01em;
+}
+
+.poem-text {
+  padding: 2rem 1.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 2;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  min-height: 140px;
+}
+
+.poem-text-line {
+  display: inline;
+  animation: lineReveal 0.45s ease both;
+}
+
+.poem-card__actions {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.action-btn {
+  flex: 1;
+  padding: 0.95rem;
+  background: none;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: all var(--transition);
+  border-right: 1px solid var(--border);
+}
+
+.action-btn:last-child {
+  border-right: none;
+}
+
+.action-btn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.action-btn--copied {
+  color: var(--success);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.empty-state__line {
+  width: 40px;
+  height: 3px;
+  background: var(--gradient);
+  border-radius: 4px;
+  margin: 0 auto 1.75rem;
+}
+
+.empty-state__text {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state__hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* Recent Poems */
+.recent-section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+
+.recent-section__title {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  padding: 0.3rem 0.8rem;
+  background: var(--gradient-subtle);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  margin-bottom: 1rem;
+}
+
+.recent-poem {
+  padding: 1.1rem 1.3rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.recent-poem:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateX(6px);
+}
+
+.recent-poem__preview {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-poem__meta {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  padding: 0.7rem 1.6rem;
+  background: rgba(10, 10, 30, 0.85);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition);
+  z-index: 100;
+  letter-spacing: 0.02em;
+}
+
+.toast--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .generator { padding: 0 1.25rem; }
+  .nav { flex-wrap: wrap; gap: 0.5rem; padding: 1.25rem 0; }
+  .nav__status { width: 100%; justify-content: flex-start; }
+  .model-options { grid-template-columns: 1fr; }
+  .poem-text { font-size: 1rem; padding: 1.5rem; }
+  .poem-card { border-radius: var(--radius-lg); }
+}
