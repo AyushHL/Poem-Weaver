@@ -3,7 +3,7 @@
 **Poem Weaver** is a modern, full-stack web application that uses deep learning (PyTorch, RNN, LSTM) to generate beautiful, thematic poetry based on user-provided seed words. It combines a heavy Machine Learning inference backend with a lightweight Node.js/Express API and a stunning, responsive React frontend.
 
 ### 🔗 Project Links
-- **🔴 Live Demo**: [Live]()
+- **🔴 Live Demo**: [Live](https://poemweaver-ai.netlify.app/)
 - **🧠 Base ML Model Repository**: [Text Generation Using RNN and LSTM](https://github.com/AyushHL/Text-Generation-Using-RNN-and-LSTM.git)
 - **📓 Kaggle Notebook**: [Kaggle Notebook](https://www.kaggle.com/code/ayush120/poem-generation-using-rnn-and-lstm)
 - **📊 Dataset (100 Poems)**: [Poems Dataset](https://www.kaggle.com/datasets/ayush120/poems-dataset/data/data)
