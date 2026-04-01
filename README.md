@@ -33,6 +33,12 @@
 
 Because the application is split into microservices, you will need to run all three layers simultaneously to test it locally.
 
+### 1. Clone the Repository
+```bash
+git clone https://github.com/AyushHL/Poem-Weaver.git
+cd Poem-Weaver
+```
+
 ### 🔑 Environment Variables
 
 Before starting the servers, create `.env` files in both the Backend and Frontend directories.
@@ -52,7 +58,7 @@ VITE_API_BASE=http://localhost:5000/api
 
 ---
 
-### 1. Python ML Service (Port 5001)
+### 2. Python ML Service (Port 5001)
 *This serves the trained `.pt` PyTorch models and acts as the inference engine.*
 ```bash
 cd Model_Service
@@ -60,7 +66,7 @@ pip install -r requirements.txt
 python inference.py
 ```
 
-### 2. Node.js Backend (Port 5000)
+### 3. Node.js Backend (Port 5000)
 *This acts as the bridge connecting the Frontend to MongoDB and the ML Service.*
 ```bash
 cd Backend
@@ -69,7 +75,7 @@ npm run dev
 ```
 *(Make sure to configure your `MONGO_URI` in `Backend/.env`)*
 
-### 3. React Frontend (Port 5173)
+### 4. React Frontend (Port 5173)
 *The user-facing web application.*
 ```bash
 cd Frontend
